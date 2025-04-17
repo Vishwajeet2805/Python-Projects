@@ -38,12 +38,13 @@ Key Features:
  iv. Fun and replayable design
  
 5. KeyHold – Educational Keylogger (for learning only)
-A basic keyboard tracker created for educational purposes.
+A simple command-line tool to store, retrieve, and delete website passwords securely in memory.
 
 Key Features:
- i. Captures keystrokes using the pynput library
- ii. Helps explore event handling and ethical aspects of keylogging
- iii. Great intro to hardware-event interaction in Python
+ i. Add and view passwords for different sites
+ ii. Delete saved entries when no longer needed
+ iii. Menu-driven interface for smooth navigation
+ iv. Uses Python dictionary for quick lookups
 
 6. PassBox – Smart Password Generator
 A local password generator that creates secure passwords based on user-defined rules.
