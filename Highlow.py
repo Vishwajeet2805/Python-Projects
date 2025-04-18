@@ -1,6 +1,6 @@
 # Project Higher ot Lower Game
 
-from game_data import data
+from Highlow_game_data import data
 import random
 
 def format_data(account):
