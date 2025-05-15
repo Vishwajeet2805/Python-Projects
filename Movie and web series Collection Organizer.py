@@ -10,6 +10,7 @@ def input_media_data():
     release_year = int(input(f"Enter release year for {title}: "))
     director = input(f"Enter director for {title}: ")
     rating = float(input(f"Enter rating (1-10) for {title}: "))
+    review = input(f"Write your review for {title}: ")
 
     # If it's a web series, ask for additional details
     seasons = episodes = None
@@ -24,6 +25,7 @@ def input_media_data():
         "Release Year": release_year,
         "Director": director,
         "Rating": rating,
+        "Review": review,
         "Seasons": seasons if media_type == 'web series' else None,
         "Episodes": episodes if media_type == 'web series' else None,
         "Date Added": datetime.now().strftime("%Y-%m-%d")
@@ -31,13 +33,12 @@ def input_media_data():
 
 # Function to save movie/web series data to CSV
 def save_to_csv(media_data, filename='media_collection.csv'):
+    df = pd.DataFrame([media_data])
     if not os.path.isfile(filename):
         # If the file doesn't exist, write header
-        df = pd.DataFrame([media_data])
         df.to_csv(filename, index=False)
     else:
         # Append new data to the CSV
-        df = pd.DataFrame([media_data])
         df.to_csv(filename, mode='a', header=False, index=False)
 
 # Function to display the media collection
